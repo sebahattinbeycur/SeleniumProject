@@ -9,10 +9,10 @@ import java.util.List;
 
 import static utils.BaseClass.*;
 
-public class DropdownDemo {
+public class _01_DropdownDemo {
     public static void main(String[] args) throws InterruptedException{
         // 1st way: Without using Select Class
-        setUp();
+        setUp();        //https://selenium08.blogspot.com/2019/11/dropdown.html
 //        List<WebElement> countries = driver.findElements(By.cssSelector("select[name='country'] option"));
 //        for (WebElement country : countries){
 //            System.out.println(country.getText());

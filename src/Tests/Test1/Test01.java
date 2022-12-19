@@ -11,8 +11,8 @@ public class Test01 {
 
         driver.get("https://www.turkishairlines.com/en-us/");
 
-        driver.findElement(By.partialLinkText("thyHeaderLink active")).click();
-        driver.findElement(By.className("sub-menu-item thin")).click();
+//        driver.findElement(By.partialLinkText("thyHeaderLink active")).click();
+//        driver.findElement(By.className("sub-menu-item thin")).click();
         Thread.sleep(3000);
 
 
