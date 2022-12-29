@@ -24,6 +24,6 @@ public class _02_cssDemo {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#welcome-menu a")).click();
         Thread.sleep(2000);
-//        driver.close();
+        driver.close();
     }
 }
