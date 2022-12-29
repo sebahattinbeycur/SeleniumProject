@@ -10,7 +10,7 @@ import static utils.BaseClass.*;
 
 public class _05_DropDownDDMMYYYY_Refactor {
     public static void main(String[] args) {
-        setUp();        //https://vitalets.github.io/combodate/
+        setUp("https://vitalets.github.io/combodate/");
         findDay("1");
         findMonth(6);
         findYear("1980");

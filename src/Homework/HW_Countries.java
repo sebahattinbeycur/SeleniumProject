@@ -11,7 +11,7 @@ import static utils.BaseClass.*;
 public class HW_Countries {
     private static int count;
     public static void main(String[] args) throws InterruptedException {
-        setUp();        //https://selenium08.blogspot.com/2019/11/dropdown.html
+        setUp("https://selenium08.blogspot.com/2019/11/dropdown.html");
 
         //1. way
         WebElement countryDD = driver.findElement(By.cssSelector("select[name='country']"));

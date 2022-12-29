@@ -10,7 +10,7 @@ import static utils.BaseClass.*;
 
 public class _05_DropDownDDMMYYYY {
     public static void main(String[] args) throws InterruptedException {
-        setUp();        //https://vitalets.github.io/combodate/
+        setUp("https://vitalets.github.io/combodate/");
 
             // 1. Find element for Day from the dropdown
             WebElement dayDD = driver.findElement(By.xpath("(//select[@class='day '])[1]"));

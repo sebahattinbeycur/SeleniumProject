@@ -7,7 +7,7 @@ import static utils.BaseClass.*;
 
 public class HW_Modal_Dialog_Popup {
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp("https://demoqa.com/modal-dialogs");
 
         WebElement largeModalText = driver.findElement(By.cssSelector("button#showLargeModal"));
         largeModalText.click();

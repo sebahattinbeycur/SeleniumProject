@@ -10,7 +10,7 @@ import static utils.BaseClass.*;
 
 public class HW_Birthday {
     public static void main(String[] args) throws InterruptedException {
-        setUp();        //https://vitalets.github.io/combodate/
+        setUp("https://vitalets.github.io/combodate/");
 
         WebElement days = driver.findElement(By.xpath("(//select[@class='day '])[1]"));
         WebElement month = driver.findElement(By.xpath("(//select[@class='month '])[1]"));

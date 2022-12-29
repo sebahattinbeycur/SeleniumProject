@@ -9,7 +9,7 @@ import static utils.BaseClass.*;
 
 public class CheckboxesRadioButtons2ndWay {
     public static void main(String[] args) throws IOException, InterruptedException {
-        setUp();        //url=https://the-internet.herokuapp.com/
+        setUp("url=https://the-internet.herokuapp.com/");
 
         driver.manage().window().maximize();
         Thread.sleep(2000);

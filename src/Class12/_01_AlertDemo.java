@@ -8,7 +8,7 @@ import static utils.BaseClass.*;
 
 public class _01_AlertDemo {
     public static void main(String[] args) throws InterruptedException {
-        setUp();        //https://selenium08.blogspot.com/2019/07/alert-test.html
+        setUp("https://selenium08.blogspot.com/2019/07/alert-test.html");
 
         WebElement simpleAlert = driver.findElement(By.id("simple"));
         simpleAlert.click();

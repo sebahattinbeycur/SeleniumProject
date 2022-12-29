@@ -5,7 +5,7 @@ import static utils.BaseClass.*;
 
 public class TestClass {
     public static void main(String[] args) {
-        setUp();
+        setUp("https://exelentersdet.com");
 
         System.out.println(driver.getTitle());
 

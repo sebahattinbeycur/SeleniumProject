@@ -8,7 +8,7 @@ import static utils.BaseClass.*;
 
 public class HW_JsAlerts {
     public static void main(String[] args) throws InterruptedException {
-        setUp();
+        setUp("https://www.selenium.dev/documentation/webdriver/interactions/alerts/");
 
         driver.findElement(By.cssSelector("a[onclick='window.alert(\"Sample alert\")']")).click();
         Thread.sleep(2000);
