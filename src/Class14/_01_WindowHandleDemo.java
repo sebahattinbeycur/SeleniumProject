@@ -56,7 +56,7 @@ public class _01_WindowHandleDemo {
         Thread.sleep(1000);
         driver.close();                   // it should close child, because as of this line FOCUS is on the child.
 
-//        Thread.sleep(1000);
+        Thread.sleep(1000);
 //        driver.close();                   // if we try to close it again. Child window is already closed, and when it is not found, we get NoSuchWindowException
 
         tearDown();

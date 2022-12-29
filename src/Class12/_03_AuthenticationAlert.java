@@ -17,6 +17,6 @@ public class _03_AuthenticationAlert {
          *
          */
 
-        //tearDown();
+        tearDown();
     }
 }
