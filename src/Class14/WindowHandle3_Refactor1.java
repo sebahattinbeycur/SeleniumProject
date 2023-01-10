@@ -3,12 +3,11 @@ package Class14;
 import org.openqa.selenium.WindowType;
 import utils.ConfigsReader;
 
-import java.util.Iterator;
 import java.util.Set;
 
 import static utils.BaseClass.*;
 
-public class _02_WindowHandle2 {
+public class WindowHandle3_Refactor1 {
     static String expectedTitle = "Change";
     public static void main(String[] args) {
         setUp("https://google.com");

@@ -6,7 +6,7 @@ import java.util.Set;
 
 import static utils.BaseClass.*;
 
-public class _04_Task {
+public class WindowHW {
     /**
      * Task: Go to this URL: https://the-internet.herokuapp.com/windows
      *     1. Identify and print parent window ID and Title

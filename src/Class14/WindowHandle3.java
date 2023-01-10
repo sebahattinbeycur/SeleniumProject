@@ -7,7 +7,7 @@ import java.util.Set;
 
 import static utils.BaseClass.*;
 
-public class _02_WindowHandle {
+public class WindowHandle3 {
     public static void main(String[] args) {
         setUp("https://google.com");
 
