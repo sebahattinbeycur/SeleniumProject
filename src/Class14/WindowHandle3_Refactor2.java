@@ -47,6 +47,5 @@ public class WindowHandle3_Refactor2 {
                 break;
             }
         }
-
     }
 }

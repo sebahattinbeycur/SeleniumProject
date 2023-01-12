@@ -5,7 +5,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class BaseClass {
+import java.time.Duration;
+
+public class BaseClass extends CommonMethods{
     public static WebDriver driver;
     public static void setUp(String url){
         ConfigsReader.loadProperties(Constants.CONFIGURATION_FILEPATH);
@@ -24,6 +26,7 @@ public class BaseClass {
         //driver.get(ConfigsReader.getProperties("url"));
         driver.get(url);
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
     public static void tearDown() {
