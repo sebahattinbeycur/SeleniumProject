@@ -98,10 +98,10 @@ public class CommonMethods {
      * @param dropdownList  list of WebElement
      * @param expectedValue String
      */
-    public static void selectDdValue(List<WebElement> dropdownList, String value) {
+    public static void selectDdValue(List<WebElement> dropdownList, String expectedValue) {
         for (WebElement element : dropdownList){
             String actualValue = element.getText();
-            if (actualValue.equals(value)){
+            if (actualValue.equals(expectedValue)){
                 element.click();
                 break;
             }
