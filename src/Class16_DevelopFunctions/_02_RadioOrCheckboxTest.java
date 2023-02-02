@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static utils.BaseClass.*;
+import static utils.CommonMethods.*;
 
 public class _02_RadioOrCheckboxTest {
     public static void main(String[] args) {

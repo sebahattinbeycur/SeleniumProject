@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 import static utils.BaseClass.*;
+import static utils.CommonMethods.*;
 
 public class _04_DropdownTest2 {
     public static void main(String[] args) {

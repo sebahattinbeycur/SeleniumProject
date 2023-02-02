@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 import static utils.BaseClass.*;
+import static utils.CommonMethods.*;
 
 public class _05_Dropdown3 {
     public static void main(String[] args) throws InterruptedException {
