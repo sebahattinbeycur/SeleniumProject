@@ -1,15 +1,15 @@
 package Class16_DevelopFunctions;
 
 public class CustomExceptionDemo {
-    public static void main(String[] args) {
-        int myint = 2;
-
-        if (myint>5){
+    static final int TEN = 10;
+    public static void main(String[] args) throws Exception {
+        int myInt = 11;
+        if (TEN >= myInt) {
             System.out.println("Hi");
-        }else{
+        } else {
             try {
-                System.out.println("Custom error message goes here: ");
-                throw new Exception(String.valueOf(myint));
+                System.out.println("Please enter a number equal to or less than " + TEN);
+                throw new Exception(myInt + " entered");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -13,7 +13,7 @@ public class _08_JSExecutorDemo extends BaseClass {
         wait(2);
 
         String script = "arguments[0].scrollIntoView(true);";      // This is one of the JS scripts which can be copied from the web (i.e. StackOverflow, Google or your cheatSheet)
-        WebElement popularCellPhones = driver.findElement(By.id("s0-27_1-9-0-1[4]-0-2-0-title"));   // We are scrolling down to 'Popular Cell Phones' section.
+        WebElement popularCellPhones = driver.findElement(By.id("s0-27_1-9-0-1[5]-0-2-0-title"));   // We are scrolling down to 'Popular Cell Phones' section.
         ((JavascriptExecutor)driver).executeScript(script,popularCellPhones);
         wait(1);
 

@@ -13,23 +13,23 @@ public class _12_InfiniteScroll_Refactor extends BaseClass {
         driver.findElement(By.linkText("Infinite Scroll")).click();
         wait(2);
 
-        scrollToParagraph(13);
+        scrollToParagraph(13,By.className("jscroll-added"));
 
         tearDown();
     }
 
-    public static void scrollToParagraph(int index) {
-        String script = "window.scrollTo(0, document.body.scrollHeight)";
-        var jsExecutor = (JavascriptExecutor) driver;
+//    public static void scrollToParagraph(int index) {
+//        String script = "window.scrollTo(0, document.body.scrollHeight)";
+//        var jsExecutor = (JavascriptExecutor) driver;
+//
+//        while (getNumberOfParagraphs() < index) {
+//            jsExecutor.executeScript(script); // scroll down by one <p>
+//        }
+//        System.out.println("Total paragraphs: " + getNumberOfParagraphs());
+//    }
 
-        while (getNumberOfParagraphs() < index) {
-            jsExecutor.executeScript(script); // scroll down by one <p>
-        }
-        System.out.println("Total paragraphs: " + getNumberOfParagraphs());
-    }
-
-    public static int getNumberOfParagraphs() {
-        List<WebElement> paragraphs = driver.findElements(By.className("jscroll-added"));
-        return paragraphs.size();
-    }
+//    public static int getNumberOfParagraphs() {
+//        List<WebElement> paragraphs = driver.findElements(By.className("jscroll-added"));
+//        return paragraphs.size();
+//    }
 }

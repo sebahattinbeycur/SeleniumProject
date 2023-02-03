@@ -1,13 +1,14 @@
 package utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebElement;
+import com.google.common.annotations.VisibleForTesting;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -37,7 +38,6 @@ public class CommonMethods {
             }
         }
     }
-
 
     /**
      * This method will clear and then send value to input field(s).
@@ -82,6 +82,11 @@ public class CommonMethods {
         waitForElement().until(ExpectedConditions.visibilityOf(element));
     }
 
+    /**
+     * Method will wait for the given element based on the visibility of Element
+     *
+     * @param by By locator
+     */
     public static void waitForVisibilityOfElement(By by) {
         waitForElement().until(ExpectedConditions.visibilityOfElementLocated(by));
     }
@@ -213,19 +218,74 @@ public class CommonMethods {
             throw new RuntimeException(e);
         }
     }
-    public static void scrollToParagraph(int index) {
+
+    public static void scrollToParagraph(int index, By by) {
         String script = "window.scrollTo(0, document.body.scrollHeight)";
-        var jsExecutor = (JavascriptExecutor) driver;
 
-        while (getNumberOfParagraphs() < index) {
-            jsExecutor.executeScript(script); // scroll down by one <p>
+        while (getNumberOfParagraphs(by) < index) {
+            jsExecutor().executeScript(script); // scroll down by one <p>
         }
-        System.out.println("Total paragraphs: " + getNumberOfParagraphs());
+        System.out.println("Total paragraphs: " + getNumberOfParagraphs(by));
     }
 
-    public static int getNumberOfParagraphs() {
-        List<WebElement> paragraphs = driver.findElements(By.className("jscroll-added"));
-        return paragraphs.size();
+    public static int getNumberOfParagraphs(By by) {
+//        List<WebElement> paragraphs = driver.findElements(By.className("jscroll-added"));
+        return driver.findElements(by).size();
     }
 
+    public static JavascriptExecutor jsExecutor() {
+        return (JavascriptExecutor) driver;
+    }
+
+    /**
+     * Method performs simple click based on Javascript. Use this if regular Selenium click fails.
+     *
+     * @param element WebElement that needs to be clicked on.
+     */
+    public static void jsClick(WebElement element) {
+        jsExecutor().executeScript("arguments[0].click();", element);
+    }
+
+    /**
+     * Method will scroll to the given element
+     *
+     * @param element WebElement to get scrolled to
+     */
+    public static void scrollToElement(WebElement element) {
+        jsExecutor().executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    /**
+     * Method will scroll both vertically (left & right) and horizontally (up & down) based on given pixels.
+     * @param horizontalPixel int
+     * @param verticalPixel int
+     */
+    public static void scrollToElement(int horizontalPixel, int verticalPixel) {
+        jsExecutor().executeScript("window.scrollBy(" + horizontalPixel + "," + verticalPixel + ")");
+    }
+
+    /**
+     * Method will scroll based on given pixel
+     *
+     * @param pixel int
+     */
+
+    public static void scrollDown(int pixel){
+        jsExecutor().executeScript("window.scrollBy(0," + pixel + ")");
+    }
+
+    public static void scrollUp(int pixel){
+        jsExecutor().executeScript("window.scrollBy(0," + pixel + ")");
+    }
+
+    public static void takeScreenshot(String fileName) {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(sourceFile, new File("screenshots/" + fileName + ".png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Screenshot is not taken");
+        }
+    }
 }
