@@ -3,6 +3,7 @@ package utils;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
@@ -18,6 +19,10 @@ public class BaseClass extends CommonMethods{
             }
             case "firefox" -> {
                 System.setProperty("web.driver.gecko.driver", Constants.GECKO_DRIVER_PATH);
+                driver = new EdgeDriver();
+            }
+            case "edge" -> {
+                System.setProperty("webdriver.edge.driver", Constants.EDGE_DRIVER_PATH);
                 driver = new FirefoxDriver();
             }
             default -> throw new RuntimeException("Browser is not supported");
